@@ -17,7 +17,11 @@ const gallery = (function () {
     }
 
     function changeFocus(event){
-        FOCUSED_IMAGE.src = event.target.src;
+        if(event.target.matches(".gallery__thumbnail")){
+            FOCUSED_IMAGE.src = event.target.src;
+
+            //if sætningen gør at billedet ikke forsvinder når man fører musen fra billedet og ud i margin, som det gør hvis man ikke har if sætningen på.
+        }
     }
 
     function init(images = []) {
