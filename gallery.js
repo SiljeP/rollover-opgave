@@ -7,10 +7,10 @@ const gallery = (function () {
     const THUMBNAILS = document.createElement("div");
     THUMBNAILS.classList.add("gallery__thumbnails");
 
-
     function buildThumbnail(image) {
         const BUTTON = document.createElement("button");
         BUTTON.addEventListener("click", changeFocus);
+        BUTTON.addEventListener("mouseover", changeFocus);
         BUTTON.innerHTML = `<img src = "${image}" alt = "gallereri miniature" class = "gallery__thumbnail">`;
         BUTTON.classList.add("gallery__button");
         THUMBNAILS.append(BUTTON);
@@ -19,7 +19,6 @@ const gallery = (function () {
     function changeFocus(event){
         FOCUSED_IMAGE.src = event.target.src;
     }
-
 
     function init(images = []) {
         FOCUSED_IMAGE.src = images[0];

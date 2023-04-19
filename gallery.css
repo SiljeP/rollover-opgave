@@ -1,0 +1,31 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+.gallery__focusedImage{
+    width: 600px;
+    height: 400px;
+   
+}
+
+.gallery__thumbnail{
+width:100px;
+height:100px;
+
+display:block;
+
+
+
+}
+
+.gallery__button{
+    margin: 1rem;
+
+    width: 100px;
+    height: 100px;
+
+    border: none;
+}
