@@ -14,6 +14,9 @@ body{
     background-color: black;
 }
 
+.gallery__container{
+    position: relative; /*VIGTIGT i forhold til zoom */
+}
 p{
     color: aliceblue;
     text-align: center;
@@ -22,8 +25,6 @@ p{
 .gallery__focusedImage {
     width: 600px;
     height: 400px;
-    
-    
 
 }
 
@@ -53,13 +54,39 @@ p{
 
 }
 
+/* Ting til zoom funktion */
+
+.gallery__zoomedImageContainer{
+    width:300px;
+    height:300px;
+    /*Hvis forældre elementet er position relative 
+    kan vi nemt positionere et absolut positioned child element */
+    position:absolute;
+    top:0;
+    right:0;
+    overflow: hidden; /*VIGTIGT*/
+    margin-right: 400px;
+}
+
+.gallery__zoomedImage{
+    height:300px;
+    width:auto;
+    transform:scale(2)
+}
 
 /* RESPONSIV DESIGN HERUNDER */
 
 @media screen and (max-width: 600px) {
+    .gallery__zoomedImageContainer{
+     display: none;
+    }
+    
+    .gallery__zoomedImage{
+        display: none;
+    }
+   
     p {
         padding: 1rem 3rem;
-        
     }
 
     .gallery__focusedImage {
@@ -93,7 +120,14 @@ p{
 }
 
 @media screen and (max-width: 385px){
-
+    .gallery__zoomedImageContainer{
+        display: none;
+       }
+       
+       .gallery__zoomedImage{
+           display: none;
+       }
+      
     p{
         padding: 1% 5%;
         margin: auto;
